@@ -1,10 +1,94 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Hi!</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-    <p>HI LOUISA<p>
-  </body>
+
+<head>
+  <meta charset="utf-8" nname="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title></title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous">
+
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+        <style>
+          .border {
+            border-style: solid;
+          }
+					.symptom-button {
+            height: 8em;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 7em;
+          }
+          .search-height{
+          height: 2em;
+          }
+          .bg-gray{
+            background-color: gray;
+          }
+          #ADD_new {
+            height: 15em;
+          }
+          
+          .tabs {
+            height: 5em;
+          }
+          
+          .h1 {
+            text-align: center;
+          }
+
+
+        </style>
+</head>
+
+<body>
+  <h1>Input Symptoms</h1>
+  <div class='container'>
+    <div class='row bg-gray search-height'>
+      <span class='glyphicon glyphicon-search'></span>
+      Search
+    </div>
+    <div class='row'>
+      <h3>Recently Added</h3>
+    </div>
+    <div class='row'>
+      <button class='col-xs-4 border symptom-button' onclick='addCough()'>
+        Cough
+      </button>
+      <button class='col-xs-4 border symptom-button'>
+        Headache
+      </button>
+      <button class='col-xs-4 border symptom-button'>
+        Sore Throat
+      </button>
+    </div>
+
+    <div class='row'>
+      	<button class='col-xs-12' id='ADD_new'>Add new symptoms</button>
+      </div>
+    <div class='row'>
+      <button class='col-xs-6 border tabs'>
+        Input Symptoms
+      </button>
+      <button class='col-xs-6 border tabs'>
+        Trends
+      </button>
+    </div>
+  </div>
+  <script>
+    var symptoms = [];
+      function addCough() {
+        symptoms.push('cough');
+        alert('Cough Added!')
+      }
+  </script>
+  
+</body>
+
 </html>
