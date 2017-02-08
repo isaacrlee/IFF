@@ -5,15 +5,6 @@
     line-height: 2em;
     font-size: 24px;
   }
-  .top-buffer{
-    margin-top: 3em;
-  }
-  .hidden{
-    display: none;
-  }
-  .show{
-    display: block;
-  }
   /* The Overlay (background) */
   .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */

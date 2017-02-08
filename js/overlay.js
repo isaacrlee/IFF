@@ -6,7 +6,7 @@
   /* Close */
   function closeNav() {
     document.getElementById("severity").style.height = "0%";
-    document.getElementById("add").className = "add hidden";
+    document.getElementById("add").className = "add hide";
   }
   function toggleButton(){
     document.getElementById("add").className = "add show";

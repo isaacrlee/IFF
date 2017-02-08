@@ -1,18 +1,32 @@
 .symptom-button {
-    height: 8em;
+    height: 14em;
     vertical-align: middle;
     text-align: center;
     line-height: 7em;
   }
 
   .search-height{
-    height: 2em;
+    height: 6em;
   }
   
   #add-new {
-    height: 15em;
+    height: 35.5em;
   }
   
   .tabs {
-    height: 5em;
+    height: 12em;
+  }
+
+  .title {
+    font-size: 72px;
+  }
+  
+  .subtitle {
+    font-size: 40px;
+  }
+  .top-buffer{
+    margin-top: 3em;
+  }
+  .top-buffer-title{
+    margin-top: 0.5em;
   }
