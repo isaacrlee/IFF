@@ -7,41 +7,44 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
   crossorigin="anonymous">
-  
+
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
   crossorigin="anonymous">
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
   crossorigin="anonymous"></script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
   <style>
   .border {
     border-style: solid;
   }
   .symptom-button {
-    height: 8em;
+    height: 14em;
     vertical-align: middle;
     text-align: center;
     line-height: 7em;
   }
   .search-height{
-    height: 2em;
+    height: 6em;
   }
   .bg-gray{
     background-color: gray;
   }
   #ADD_new {
-    height: 15em;
+    height: 35.5em;
   }
-  
+
   .tabs {
-    height: 5em;
+    height: 12em;
   }
-  
-  .h1 {
-    text-align: center;
+
+  .title {
+    font-size: 72px;
+  }
+  .subtitle{
+    font-size: 40px;
   }
   .Add{
     height: 2em;
@@ -52,6 +55,9 @@
   }
   .top-buffer{
     margin-top: 3em;
+  }
+  .top-buffer-title{
+    margin-top: .5em;
   }
   .hidden{
     display: none;
@@ -73,7 +79,7 @@
     overflow-x: hidden; /* Disable horizontal scroll */
     transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
   }
-  
+
   /* Position the content inside the overlay */
   .overlay-content {
     position: relative;
@@ -82,7 +88,7 @@
     /*text-align: center; /* Centered text/links */*/
     margin-top: 20px; /* 30px top margin to avoid conflict with the close button on smaller screens */
   }
-  
+
   /* The navigation links inside the overlay */
   .overlay a {
     padding: 8px;
@@ -92,12 +98,12 @@
     /*display: block; /* Display block instead of inline */*/
     /*transition: 0.3s; /* Transition effects on hover (color) */*/
   }
-  
+
   /* When you mouse over the navigation links, change their color */
   /*.overlay a:hover, .overlay a:focus {
   color: #f1f1f1;
   }*/
-  
+
   /* Position the close button (top right corner) */
   .overlay .closebtn {
     /*position: absolute;*/
@@ -105,7 +111,7 @@
     /*right: 45px;*/
     font-size: 60px;
   }
-  
+
   /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
   @media screen and (max-height: 450px) {
     .overlay a {font-size: 20px}
@@ -115,16 +121,16 @@
       right: 35px;
     }
   }
-  
-  
+
+
   </style>
 </head>
 
 <body>
   <!-- The overlay -->
   <div id="symseverity" class="container overlay">
-    
-    
+
+
     <!-- Overlay content -->
     <div class="container overlay-content">
       <div class="row text-right">
@@ -151,17 +157,19 @@
         </button>
       </div>
     </div>
-    
+
   </div>
-  
-  <h1>Input Symptoms</h1>
+
   <div class='container'>
+    <div class="row title top-buffer-title ">
+      Input Symptoms
+    </div>
     <div class='row bg-gray search-height'>
       <span class='glyphicon glyphicon-search'></span>
       Search
     </div>
-    <div class='row'>
-      <h3>Recently Added</h3>
+    <div class='row subtitle top-buffer-title'>
+      Recently Added
     </div>
     <div class='row'>
       <button class='col-xs-4 border symptom-button' onclick="openNav('Cough')">
@@ -174,7 +182,7 @@
         Sore Throat
       </button>
     </div>
-    
+
     <div class='row'>
       <button class='col-xs-12' id='ADD_new'>Add new symptoms</button>
     </div>
@@ -186,7 +194,7 @@
         Trends
       </button>
     </div>
-    
+
   </div>
   <script>
   var symptoms = [];
@@ -199,7 +207,7 @@
     document.getElementById("symseverity").style.height = "100%";
     document.getElementById("sickness").innerHTML = e;
   }
-  
+
   /* Close */
   function closeNav() {
     document.getElementById("symseverity").style.height = "0%";
@@ -209,7 +217,7 @@
     document.getElementById("Add").className = "Add show";
   }
   </script>
-  
+
 </body>
 
 </html>
