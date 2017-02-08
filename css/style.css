@@ -1,0 +1,18 @@
+.symptom-button {
+    height: 8em;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 7em;
+  }
+
+  .search-height{
+    height: 2em;
+  }
+  
+  #add-new {
+    height: 15em;
+  }
+  
+  .tabs {
+    height: 5em;
+  }

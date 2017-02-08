@@ -3,128 +3,33 @@
 
 <head>
   <meta charset="utf-8" nname="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title></title>
+  
+  <title>In Fine Feather</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script
+  src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
   crossorigin="anonymous">
-  
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
   crossorigin="anonymous">
-  
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
   crossorigin="anonymous"></script>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
-  <style>
-  .border {
-    border-style: solid;
-  }
-  .symptom-button {
-    height: 8em;
-    vertical-align: middle;
-    text-align: center;
-    line-height: 7em;
-  }
-  .search-height{
-    height: 2em;
-  }
-  .bg-gray{
-    background-color: gray;
-  }
-  #ADD_new {
-    height: 15em;
-  }
-  
-  .tabs {
-    height: 5em;
-  }
-  
-  .h1 {
-    text-align: center;
-  }
-  .Add{
-    height: 2em;
-    vertical-align: middle;
-    text-align: center;
-    line-height: 2em;
-    font-size: 24px;
-  }
-  .top-buffer{
-    margin-top: 3em;
-  }
-  .hidden{
-    display: none;
-  }
-  .show{
-    display;
-  }
-  /* The Overlay (background) */
-  .overlay {
-    /* Height & width depends on how you want to reveal the overlay (see JS below) */
-    height: 0%;
-    width: 100%;
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    background-color: rgb(0,0,0); /* Black fallback color */
-    background-color: rgba(0,0,0, 0.8); /* Black w/opacity */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
-  }
-  
-  /* Position the content inside the overlay */
-  .overlay-content {
-    position: relative;
-    top: 25%; /* 25% from the top */
-    width: 100%; /* 100% width */
-    /*text-align: center; /* Centered text/links */*/
-    margin-top: 20px; /* 30px top margin to avoid conflict with the close button on smaller screens */
-  }
-  
-  /* The navigation links inside the overlay */
-  .overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: white;
-    /*display: block; /* Display block instead of inline */*/
-    /*transition: 0.3s; /* Transition effects on hover (color) */*/
-  }
-  
-  /* When you mouse over the navigation links, change their color */
-  /*.overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
-  }*/
-  
-  /* Position the close button (top right corner) */
-  .overlay .closebtn {
-    /*position: absolute;*/
-    /*top: 60px;*/
-    /*right: 45px;*/
-    font-size: 60px;
-  }
-  
-  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
-  @media screen and (max-height: 450px) {
-    .overlay a {font-size: 20px}
-    .overlay .closebtn {
-      font-size: 40px;
-      top: 15px;
-      right: 35px;
-    }
-  }
-  
-  
-  </style>
+
+  <link rel="stylesheet" href="css/colors.css">
+  <link rel="stylesheet" href="css/overlay.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <!-- The overlay -->
-  <div id="symseverity" class="container overlay">
-    
-    
+  <div id="severity" class="container overlay">
     <!-- Overlay content -->
     <div class="container overlay-content">
       <div class="row text-right">
@@ -132,84 +37,65 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       </div>
       <div class="row">
-        <a id = "sickness">Sickness</a>
+        <a id = "symptom">symptom</a>
       </div>
       <div class="row">
-        <button class='col-xs-4 border symptom-button' name="mild" onclick="toggleButton()">
+        <button class='col-xs-4 border--gray symptom-button' name="mild" onclick="toggleButton()">
           Mild
         </button>
-        <button class='col-xs-4 border symptom-button' name="moderate" onclick="toggleButton()">
+        <button class='col-xs-4 border--gray symptom-button' name="moderate" onclick="toggleButton()">
           Moderate
         </button>
-        <button class='col-xs-4 border symptom-button' name="severe" onclick="toggleButton()">
+        <button class='col-xs-4 border--gray symptom-button' name="severe" onclick="toggleButton()">
           Severe
         </button>
       </div>
       <div class="row pull-right top-buffer">
-        <button class="Add hidden" onclick="closeNav()" id="Add">
+        <button class="add hidden" onclick="closeNav()" id="add">
           Add
         </button>
       </div>
     </div>
-    
   </div>
   
   <h1>Input Symptoms</h1>
   <div class='container'>
+
     <div class='row bg-gray search-height'>
       <span class='glyphicon glyphicon-search'></span>
       Search
     </div>
+
     <div class='row'>
       <h3>Recently Added</h3>
     </div>
+
     <div class='row'>
-      <button class='col-xs-4 border symptom-button' onclick="openNav('Cough')">
+      <button class='col-xs-4 border--gray symptom-button' onclick="openNav('Cough')">
         Cough
       </button>
-      <button class='col-xs-4 border symptom-button'onclick="openNav('Headache')">
+      <button class='col-xs-4 border--gray symptom-button'onclick="openNav('Headache')">
         Headache
       </button>
-      <button class='col-xs-4 border symptom-button'onclick="openNav('Sore Throat')">
+      <button class='col-xs-4 border--gray symptom-button'onclick="openNav('Sore Throat')">
         Sore Throat
       </button>
     </div>
-    
+
     <div class='row'>
-      <button class='col-xs-12' id='ADD_new'>Add new symptoms</button>
+      <button class='col-xs-12' id='add-new'>Add New Symptoms</button>
     </div>
+
     <div class='row'>
-      <button class='col-xs-6 border tabs'>
+      <button class='col-xs-6 border--gray tabs'>
         Input Symptoms
       </button>
-      <button class='col-xs-6 border tabs'>
+      <button class='col-xs-6 border--gray tabs'>
         Trends
       </button>
     </div>
-    
-  </div>
-  <script>
-  var symptoms = [];
-  function addCough() {
-    symptoms.push('cough');
-    alert('Cough Added!')
-  }
-  /* Open */
-  function openNav(e) {
-    document.getElementById("symseverity").style.height = "100%";
-    document.getElementById("sickness").innerHTML = e;
-  }
-  
-  /* Close */
-  function closeNav() {
-    document.getElementById("symseverity").style.height = "0%";
-    document.getElementById("Add").className = "Add hidden";
-  }
-  function toggleButton(){
-    document.getElementById("Add").className = "Add show";
-  }
-  </script>
-  
-</body>
 
+  </div>
+  <script src="js/overlay.js"></script>
+</body>
 </html>
