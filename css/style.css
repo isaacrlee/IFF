@@ -18,11 +18,11 @@
   }
 
   .title {
-    font-size: 72px;
+    font-size: 6em;
   }
   
   .subtitle {
-    font-size: 40px;
+    font-size: 3em;
   }
   .top-buffer{
     margin-top: 3em;
