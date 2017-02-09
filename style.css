@@ -1,0 +1,70 @@
+.container {
+  font-family: futura;
+  width: 100%;
+}
+
+.symptom-button {
+    height: 5em;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 3em;
+    font-size:3em;
+    border: .2em solid white;
+  }
+
+  .recently-added {
+    border: 1em solid white;
+  }
+  .search-height{
+    height: 4em;
+    font-size: 3em;
+    text-align: center;
+    line-height:3em;
+    border: .5em solid white;
+    background-color: #DDDDDD;
+    border-radius: 1em;
+  }
+
+  #add-new {
+    height: 12em;
+    font-size: 5em;
+  }
+
+  .tabs {
+    height: 4em;
+    font-size:3em;
+    background-color: #5F444B;
+    color:white;
+  }
+
+  .menu {
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  .title {
+    font-size: 6em;
+    text-align: center;
+    color: #5F444B;
+  }
+
+  .subtitle {
+    font-size: 3em;
+    margin-left: .3em;
+    color: #5F444B;
+
+  }
+  .top-buffer{
+    margin-top: 3em;
+  }
+  .top-buffer-title{
+    margin-top: 0.5em;
+  }
+
+  .severity-button {
+      height: 6em;
+      vertical-align: middle;
+      text-align: center;
+      font-size:4em;
+      border: .2em solid white;
+  }
