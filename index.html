@@ -40,29 +40,29 @@
         <a id = "symptom">symptom</a>
       </div>
       <div class="row">
-        <button class='col-xs-4 border--gray symptom-button' name="mild" onclick="toggleButton()">
+        <button class='col-xs-4 border--gray severity-button' id="mild" onclick="toggleButton()">
           Mild
         </button>
-        <button class='col-xs-4 border--gray symptom-button' name="moderate" onclick="toggleButton()">
+        <button class='col-xs-4 border--gray severity-button' id="moderate" onclick="toggleButton()">
           Moderate
         </button>
-        <button class='col-xs-4 border--gray symptom-button' name="severe" onclick="toggleButton()">
+        <button class='col-xs-4 border--gray severity-button' id="severe" onclick="toggleButton()">
           Severe
         </button>
       </div>
       <div class="row pull-right top-buffer">
-        <button class="add hidden" onclick="closeNav()" id="add">
+
+        <button class="add hide" onclick="closeNav()" id="add">
           Add
         </button>
       </div>
     </div>
   </div>
-  
   <div class='container'>
     <div class="row title top-buffer-title">
         Input Symptoms
       </div>
-    <div class='row bg-gray search-height'>
+    <div class='row search'>
       <span class='glyphicon glyphicon-search'></span>
       Search
     </div>
@@ -70,9 +70,8 @@
     <div class='row subtitle top-buffer-title'>
       Recently Added
     </div>
-
-    <div class='row'>
-      <button class='col-xs-4 border--gray symptom-button' onclick="openNav('Cough')">
+    <div class='row recently-added'>
+      <button class='col-xs-4 border--gray symptom-button'onclick="openNav('Cough')">
         Cough
       </button>
       <button class='col-xs-4 border--gray symptom-button'onclick="openNav('Headache')">
@@ -84,10 +83,10 @@
     </div>
 
     <div class='row'>
-      <button class='col-xs-12' id='add-new'>Add New Symptoms</button>
+      <button class='col-xs-12 ' id='add-new'>+ Add New Symptoms</button>
     </div>
 
-    <div class='row'>
+    <div class='row menu'>
       <button class='col-xs-6 border--gray tabs'>
         Input Symptoms
       </button>
@@ -98,5 +97,6 @@
 
   </div>
   <script src="js/overlay.js"></script>
+  <script src="js/project.js"></script>
 </body>
 </html>
