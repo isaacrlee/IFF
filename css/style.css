@@ -5,6 +5,13 @@
     line-height: 7em;
   }
 
+  .list-button {
+    height: 7em;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+  }
+
   .search-height{
     height: 6em;
   }
