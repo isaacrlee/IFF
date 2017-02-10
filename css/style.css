@@ -38,6 +38,7 @@
   }
 
   .menu {
+    position: absolute;
     bottom: 0;
     right: 0;
     left: 0;
@@ -69,3 +70,7 @@
       font-size:4em;
       border: .2em solid white;
   }
+
+.button-list {
+  border-bottom: 1px solid maroon;
+}
