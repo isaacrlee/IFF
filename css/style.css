@@ -4,12 +4,12 @@
 }
 
 .symptom-button {
+    background-color: lightgray;
+    border-radius: 0.1em;
     height: 5em;
-    vertical-align: middle;
-    text-align: center;
+    vertical-align: middle;    text-align: center;
     line-height: 3em;
-    font-size:3em;
-    border: .2em solid white;
+    font-size:3em;    border: .2em solid white;
   }
 
   .symptom-button:active {
@@ -17,6 +17,7 @@
   }
 
   .symptom-button-list {
+    background-color: lightgray;
     margin-left: .25em;
     width: 97.5%;
     vertical-align: middle;
