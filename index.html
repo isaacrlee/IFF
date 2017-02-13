@@ -26,7 +26,6 @@
 </head>
 
 <body>
-  <!-- The overlay -->
   <div id="severity" class="container overlay">
     <!-- Overlay content -->
     <div class="container overlay-content">
@@ -56,48 +55,34 @@
       </div>
     </div>
   </div>
-
   <div class='container'>
     <div class="row title top-buffer-title">
       Input Symptoms
     </div>
-
     <div class='row search'>
       <span class='glyphicon glyphicon-search'></span> Search
     </div>
-
-    <div class='row subtitle top-buffer-title'>
-      Recently Added
+    <div class="row top-buffer-title scrollable">
+      <ul class="list-unstyled">
+        <li><button class="symptom-button-list" onclick="openNav('Congestion')">Congestion</button></li>
+        <li><button class="symptom-button-list" onclick="openNav('Cough')">Cough</button></li>
+        <li><button class="symptom-button-list" onclick="openNav('Fever')">Fatigue</button></li>
+        <li><button class="symptom-button-list" onclick="openNav('Fever')">Fever</button></li>
+        <li><button class="symptom-button-list" onclick="openNav('Headache')">Headache</button></li>
+        <li><button class="symptom-button-list" onclick="openNav('Sore Throat')">Sore Throat</button></li>
+      </ul>
     </div>
-    <div class='row recently-added'>
-      <button class='col-xs-4 symptom-button' onclick="openNav('Cough')">
-        Cough
-      </button>
-
-      <button class='col-xs-4 symptom-button' onclick="openNav('Headache')">
-        Headache
-      </button>
-      <button class='col-xs-4 symptom-button' onclick="openNav('Sore Throat')">
-        Sore Throat
-      </button>
-    </div>
-
-    <div class='row'>
-
-      <button class='col-xs-12 ' id='add-new' onclick='window.location.href="symptoms.html"'>+ Add New Symptoms</button>
-    </div>
-
     <div class='row menu'>
-      <button class='col-xs-6 tabs'>
+      <button class='col-xs-6 tabs' onclick='window.location.href="index.html"'>
         Input Symptoms
       </button>
       <button class='col-xs-6 tabs'>
         Trends
       </button>
     </div>
-
   </div>
   <script src="js/overlay.js"></script>
+
 </body>
 
 </html>
