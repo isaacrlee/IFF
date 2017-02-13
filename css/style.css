@@ -74,3 +74,20 @@
 .button-list {
   border-bottom: 1px solid maroon;
 }
+input[type="text"] {
+    height: 4em;
+    font-size: 3em;
+    width: 100%;
+    line-height: 3em;
+    background-color: rgb(221, 221, 221);
+    background-image: url(http://www.freeiconspng.com/uploads/search-icon-png-21.png);
+    background-size: 9%;
+    border-width: 0.5em;
+    border-style: solid;
+    border-color: white;
+    border-image: initial;
+    border-radius: 1em;
+    background-position: 0.3em center;
+    background-repeat: no-repeat;
+    padding: 1em 1em 1em 2.1em;
+}
