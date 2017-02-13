@@ -2,83 +2,93 @@
 <html>
 
 <head>
-    <meta charset="utf-8" nname="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta charset="utf-8" nname="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title>In Fine Feather</title>
+  <title>In Fine Feather</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-        crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+    crossorigin="anonymous"></script>
 
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-            crossorigin="anonymous">
-            <!-- Optional theme -->
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-                crossorigin="anonymous">
-                <!-- Latest compiled and minified JavaScript -->
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-                    crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+          crossorigin="anonymous"></script>
 
-                    <link rel="stylesheet" href="css/colors.css">
-                    <link rel="stylesheet" href="css/overlay.css">
-                    <link rel="stylesheet" href="css/style.css">
+          <link rel="stylesheet" href="css/colors.css">
+          <link rel="stylesheet" href="css/overlay.css">
+          <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div id="severity" class="container overlay">
-        <!-- Overlay content -->
-        <div class="container overlay-content">
-            <div class="row text-right">
-                <!-- Button to close the overlay navigation -->
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            </div>
-            <div class="row">
-                <a id="symptom">symptom</a>
-            </div>
-            <div class="row">
-                <button class='col-xs-4 severity-button' id="mild" onclick="toggleButton()">
+  <datalist id="searchbar">
+    <option value="Cough"></option>
+    <option value="Headache"></option>
+    <option value="Sore Throat"></option>
+  </datalist>
+  <div id="severity" class="container overlay">
+    <!-- Overlay content -->
+    <div class="container overlay-content">
+      <div class="row text-right">
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      </div>
+      <div class="row">
+        <a id="symptom">symptom</a>
+      </div>
+      <div class="row">
+        <button class='col-xs-4 severity-button' id="mild" onclick="toggleButton()">
           Mild
         </button>
-                <button class='col-xs-4 severity-button' id="moderate" onclick="toggleButton()">
+        <button class='col-xs-4 severity-button' id="moderate" onclick="toggleButton()">
           Moderate
         </button>
-                <button class='col-xs-4 severity-button' id="severe" onclick="toggleButton()">
+        <button class='col-xs-4 severity-button' id="severe" onclick="toggleButton()">
           Severe
         </button>
-            </div>
-            <div class="row pull-right top-buffer">
+      </div>
+      <div class="row pull-right top-buffer">
 
-                <button class="add hide" onclick="closeNav()" id="add">
+        <button class="add hide" onclick="closeNav()" id="add">
           Add
         </button>
-            </div>
-        </div>
+      </div>
     </div>
-    <div class='container'>
-        <div class="row title top-buffer-title">
-            Input Symptoms
-        </div>
-        <div class='row search'>
-            <span class='glyphicon glyphicon-search'></span> Search
-        </div>
-        <div class="row subtitle top-buffer-title">
-            <ul class="list-unstyled">
-                <li>Cough</li>
-                <li>Headache</li>
-                <li>Sore Throat</li>
-            </ul>
-        </div>
-        <div class='row menu'>
-            <button class='col-xs-6 tabs' onclick='window.location.href="index.html"'>
+  </div>
+  <div class='container'>
+    <div class="row title top-buffer-title">
+      Input Symptoms
+    </div>
+    <div class='row'>
+      <form>
+        <input type="text" list="searchbar" placeholder="Search...">
+      </form>
+    </div>
+    <div class="row top-buffer-title scrollable">
+      <ul class="list-unstyled">
+        <li><button class="symptom-button-list" onclick="openNav('Congestion')">Congestion</button></li>
+        <li><button class="symptom-button-list" onclick="openNav('Cough')">Cough</button></li>
+        <li><button class="symptom-button-list" onclick="openNav('Fatigue')">Fatigue</button></li>
+        <li><button class="symptom-button-list" onclick="openNav('Fever')">Fever</button></li>
+        <li><button class="symptom-button-list" onclick="openNav('Headache')">Headache</button></li>
+        <li><button class="symptom-button-list" onclick="openNav('Sore Throat')">Sore Throat</button></li>
+      </ul>
+    </div>
+    <div class='row menu'>
+      <button class='col-xs-6 tabs' onclick='window.location.href="index.html"'>
         Input Symptoms
       </button>
-            <button class='col-xs-6 tabs'>
+      <button class='col-xs-6 tabs'>
         Trends
       </button>
-        </div>
     </div>
-    <script src="js/overlay.js"></script>
+  </div>
+  <script src="js/overlay.js"></script>
 
 </body>
 
