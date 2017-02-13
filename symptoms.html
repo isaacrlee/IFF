@@ -26,6 +26,11 @@
 </head>
 
 <body>
+  <datalist id="searchbar">
+    <option value="Cough"></option>
+    <option value="Headache"></option>
+    <option value="Sore Throat"></option>
+  </datalist>
   <div id="severity" class="container overlay">
     <!-- Overlay content -->
     <div class="container overlay-content">
@@ -59,8 +64,10 @@
     <div class="row title top-buffer-title">
       Input Symptoms
     </div>
-    <div class='row search'>
-      <span class='glyphicon glyphicon-search'></span> Search
+    <div class='row'>
+      <form>
+        <input type="text" list="searchbar" placeholder="Search...">
+      </form>
     </div>
     <div class="row top-buffer-title scrollable">
       <ul class="list-unstyled">
