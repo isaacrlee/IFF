@@ -74,7 +74,7 @@
 .button-list {
   border-bottom: 1px solid maroon;
 }
-input[type="text"] {
+input[type="search"] {
     height: 4em;
     font-size: 3em;
     width: 100%;
