@@ -1,5 +1,0 @@
-Feedback after add (Remy)
-search bar functionality (Louisa)
-big add symptom button functionality (list of symptoms page) (Isaac)
-
-compatibility with mobile browsers (changing default button radius)
