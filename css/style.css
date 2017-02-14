@@ -4,12 +4,36 @@
 }
 
 .symptom-button {
+    background-color: lightgray;
+    border-radius: 0.1em;
     height: 5em;
+    vertical-align: middle;    text-align: center;
+    line-height: 3em;
+    font-size:3em;    border: .2em solid white;
+  }
+
+  .symptom-button:active {
+    background-color: gray;
+  }
+
+  .symptom-button-list {
+    background-color: lightgray;
+    margin-left: .25em;
+    width: 97.5%;
     vertical-align: middle;
     text-align: center;
     line-height: 3em;
-    font-size:3em;
+    font-size: 5em;
     border: .2em solid white;
+  }
+
+  .symptom-button-list:active {
+    background-color: gray;
+  }
+
+  .scrollable {
+    height: 83em; /* or any value */
+    overflow-y: auto;
   }
 
   .recently-added {
@@ -53,8 +77,6 @@
     font-size: 3em;
     margin-left: .3em;
     color: #5F444B;
-
-
   }
   .top-buffer{
     margin-top: 3em;
