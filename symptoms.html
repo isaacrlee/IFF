@@ -53,13 +53,20 @@
         </button>
       </div>
       <div class="row pull-right top-buffer">
-
-        <button class="add hide" onclick="closeNav()" id="add">
+        <button class="add hide" onclick="closeNavAdded()" id="add">
           Add
         </button>
       </div>
     </div>
   </div>
+
+  <div class="container feedback">
+  <!-- The feedback popup -->
+    <div style="display:none;" id="feedback">
+      Added &#10003;
+    </div>
+  </div>
+
   <div class='container'>
     <div class="row title top-buffer-title">
       Input Symptoms
