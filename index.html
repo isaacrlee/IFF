@@ -26,11 +26,7 @@
 </head>
 
 <body>
-  <datalist id ="searchbar">
-    <option value="Cough"></option>
-    <option value="Headache"></option>
-    <option value="Sore Throat"></option>
-  </datalist>
+
   <!-- The overlay -->
   <div id="severity" class="container overlay">
     <!-- Overlay content -->
@@ -73,11 +69,14 @@
       Input Symptoms
     </div>
     <div class='row'>
-
-    <form id = 'searchinput'>
-      <input type="search" id ='searchbar' list="searchbar" placeholder="Add Symptom...">
+      <form class="submit_on_enter">
+      <input type="search" id ='searchbar' list="searchitems" placeholder="Add Symptom...">
     </form>
-
+      <datalist id ="searchitems">
+        <option value="Cough"></option>
+        <option value="Headache"></option>
+        <option value="Sore Throat"></option>
+      </datalist>
     </div>
 
     <div class='row subtitle top-buffer-title'>
