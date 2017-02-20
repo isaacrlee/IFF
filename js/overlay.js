@@ -32,9 +32,8 @@
     date.innerHTML="February 20";
     var x = document.getElementById('checkboxes');
     var y = x.getElementsByClassName('hide');
-    var i;
-    for (i=0; i<y.length;i++) {
-      y[i].className="show";
+    while (y.length > 0) {
+      y[0].className = "show";
     }
   }
 
@@ -48,9 +47,8 @@
     date.innerHTML="February 14 - 20";
     var x = document.getElementById('checkboxes');
     var y = x.getElementsByClassName('show');
-    var i;
-    for (i=0; i<y.length;i++) {
-      y[i].className="hide";
+    while (y.length > 0) {
+      y[0].className = "hide";
     }
   }
 
@@ -64,9 +62,8 @@
     date.innerHTML="January 24 - February 20";
     var x = document.getElementById('checkboxes');
     var y = x.getElementsByClassName('show');
-    var i;
-    for (i=0; i<y.length;i++) {
-      y[i].className="hide";
+    while (y.length > 0) {
+      y[0].className = "hide";
     }
   }
 
@@ -80,8 +77,7 @@
     date.innerHTML="February 2016 - 2017";
     var x = document.getElementById('checkboxes');
     var y = x.getElementsByClassName('show');
-    var i;
-    for (i=0; i<y.length;i++) {
-      y[i].className="hide";
+    while (y.length > 0) {
+      y[0].className = "hide";
     }
   }
