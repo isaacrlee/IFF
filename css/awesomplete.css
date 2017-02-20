@@ -40,6 +40,8 @@
 	border: 1px solid rgba(0,0,0,.3);
 	box-shadow: .05em .2em .6em rgba(0,0,0,.2);
 	text-shadow: none;
+  /*OUR CHANGES*/
+  font-size: 3em;
 }
 
 @supports (transform: scale(0)) {
@@ -80,25 +82,25 @@
 	}
 
 	.awesomplete > ul > li:hover {
-		background: hsl(200, 40%, 80%);
+		background: lightgray;
 		color: black;
 	}
 
 	.awesomplete > ul > li[aria-selected="true"] {
-		background: hsl(205, 40%, 40%);
+		background: gray;
 		color: white;
 	}
 
 		.awesomplete mark {
-			background: hsl(65, 100%, 50%);
+			background: rgba(95,68,75,0.6);
 		}
 
 		.awesomplete li:hover mark {
-			background: hsl(68, 100%, 41%);
+			background: rgba(95,68,75,0.5);
 		}
 
 		.awesomplete li[aria-selected="true"] mark {
-			background: hsl(86, 100%, 21%);
+			background: rgba(95,68,75,0.4);
 			color: inherit;
 		}
 /*# sourceMappingURL=awesomplete.css.map */
