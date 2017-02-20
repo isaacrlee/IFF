@@ -20,6 +20,8 @@ $(document).ready(function () {
     });
 });
 
+
+
 // var my_field = document.getElementById('searchbar');
 //
 //       my_field.addEventListener("keyup", function (event) {

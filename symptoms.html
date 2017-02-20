@@ -68,9 +68,15 @@
   </div>
 
   <div class='container'>
-    <div class="row title top-buffer-title">
-      Input Symptoms
+    <div class="row">
+      <div class="back-button" onclick='window.location.href="index.html"'>
+        &#8592;
+      </div>
+      <div class="title top-buffer-title" id="title-shifted">
+        Input Symptoms
+      </div>
     </div>
+
     <div class='row'>
       <form>
         <input type="search" list="searchbar" placeholder="Add Symptom...">
@@ -90,7 +96,7 @@
       <button class='col-xs-6 tabs' onclick='window.location.href="index.html"'>
         Input Symptoms
       </button>
-      <button class='col-xs-6 tabs'>
+      <button class='col-xs-6 tabs' onclick='window.location.href="trends.html"'>
         Trends
       </button>
     </div>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" nname="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>In Fine Feather</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+    crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous">
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+          crossorigin="anonymous"></script>
+
+          <link rel="stylesheet" href="css/colors.css">
+          <link rel="stylesheet" href="css/overlay.css">
+          <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class='container'>
+    <div class="row title top-buffer-title">
+       Trends
+    </div>
+    <div class="row" id="date">
+      February 16
+    </div>
+    <div id="checkboxes">
+    <div class="row syms">
+      <div class='col-xs-1'>
+        <div class="box" id="sym1">
+        </div>
+      </div>
+      <div class='col-xs-3'>
+        <div class="symptom-title">
+        Cough
+        </div>
+      </div>
+      <div class="show">
+        <div class='col-xs-6'>
+          <button class='col-xs-4 change-severity toggled'>
+            Mild
+          </button>
+          <button class='col-xs-4 change-severity not-toggled'>
+            Moderate
+          </button>
+          <button class='col-xs-4 change-severity not-toggled'>
+            Severe
+          </button>
+        </div>
+        <button class='col-xs-1 delete-button'>
+          x
+        </button>
+      </div>
+    </div>
+    <div class="row syms">
+      <div class='col-xs-1'>
+        <div class="box" id="sym2">
+        </div>
+      </div>
+      <div class='col-xs-3'>
+        <div class="symptom-title">
+        Fatigue
+        </div>
+      </div>
+      <div class="show">
+        <div class='col-xs-6'>
+          <button class='col-xs-4 change-severity not-toggled'>
+            Mild
+          </button>
+          <button class='col-xs-4 change-severity not-toggled'>
+            Moderate
+          </button>
+          <button class='col-xs-4 change-severity toggled'>
+            Severe
+          </button>
+        </div>
+        <button class='col-xs-1 delete-button'>
+          x
+        </button>
+      </div>
+    </div>
+    <div class="row syms">
+      <div class='col-xs-1'>
+        <div class="box" id="sym3">
+        </div>
+      </div>
+      <div class='col-xs-3'>
+        <div class="symptom-title">
+        Fever
+        </div>
+      </div>
+      <div class="show">
+        <div class='col-xs-6'>
+          <button class='col-xs-4 change-severity not-toggled'>
+            Mild
+          </button>
+          <button class='col-xs-4 change-severity toggled'>
+            Moderate
+          </button>
+          <button class='col-xs-4 change-severity not-toggled'>
+            Severe
+          </button>
+        </div>
+        <button class='col-xs-1 delete-button'>
+          x
+        </button>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+      <img src="graph1.png" id="graph">
+    </div>
+      <div class="row time-menu">
+        <button class='col-xs-3 time-interval active' id="day" onclick="toggleDay()">
+          Day
+        </button>
+        <button class='col-xs-3 time-interval inactive' id="week" onclick="toggleWeek()">
+          Week
+        </button>
+        <button class='col-xs-3 time-interval inactive' id="month" onclick="toggleMonth()">
+          Month
+        </button>
+        <button class='col-xs-3 time-interval inactive' id="year" onclick="toggleYear()">
+          Year
+        </button>
+      </div>
+      <div class='row menu'>
+        <button class='col-xs-6 tabs' onclick='window.location.href="index.html"'>
+          Input Symptoms
+        </button>
+        <button class='col-xs-6 tabs'>
+          Trends
+        </button>
+      </div>
+    </div>
+  <script src="js/overlay.js"></script>
+</body>
+
+</html>
