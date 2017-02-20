@@ -21,6 +21,7 @@
   crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="css/colors.css">
+  <link rel="stylesheet" href="css/awesomplete.css">
   <link rel="stylesheet" href="css/overlay.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -67,14 +68,7 @@
       Input Symptoms
     </div>
     <div class='row'>
-      <form class="submit_on_enter">
-        <input type="search" id ="searchbar" list="searchitems" placeholder="Add Symptom...">
-      </form>
-      <datalist id="searchitems">
-        <option value="Cough"></option>
-        <option value="Headache"></option>
-        <option value="Sore Throat"></option>
-      </datalist>
+        <input type="search" id ="searchlist" placeholder="Add Symptom...">
     </div>
     <div class="row top-buffer-title scrollable">
       <ul class="list-unstyled">
@@ -95,8 +89,8 @@
       </button>
     </div>
   </div>
+  <script src="js/awesomplete.js"></script>
   <script src="js/overlay.js"></script>
-
 </body>
 
 </html>
