@@ -6,6 +6,7 @@
   /* Close */
   function closeNav() {
     document.getElementById("severity").style.height = "0%";
+    document.getElementById("searchlist").value = '';
   }
 
   function toggleButton(){
@@ -20,6 +21,7 @@
                $('#feedback').delay(1500).fadeOut();
             });
         });
+    document.getElementById("searchlist").value = '';
   }
 
   function toggleSymptom(sym){
@@ -104,3 +106,11 @@
       y[0].className="hide";
     }
   }
+  var input = document.getElementById("searchlist");
+  A = new Awesomplete(input, {
+  	list: ["Cough","Headache","Sore Throat"],
+    minChars: 1
+  });
+  window.addEventListener("awesomplete-selectcomplete",function(e){
+    openNav(e.text);
+  },false);

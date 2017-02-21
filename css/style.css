@@ -40,15 +40,6 @@
   .recently-added {
     border: 1em solid white;
   }
-  .search{
-    height: 4em;
-    font-size: 3em;
-    text-align: center;
-    line-height:3em;
-    border: .5em solid white;
-    background-color: #DDDDDD;
-    border-radius: 1em;
-  }
 
   #add-new {
     height: 12.6em;
@@ -125,6 +116,7 @@ input[type="search"] {
     background-repeat: no-repeat;
     padding: 1em 1em 1em 3em;
 }
+
 
 #feedback {
   position:absolute;

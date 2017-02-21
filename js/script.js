@@ -20,30 +20,3 @@ $(document).ready(function () {
     });
 });
 
-
-
-// var my_field = document.getElementById('searchbar');
-//
-//       my_field.addEventListener("keyup", function (event) {
-//           if (event.keyCode == 13) {
-//               event.preventDefault();
-//
-//               if (my_field.value.length != 0) {
-//                   console.log(my_field.value);
-//                   openNav(my_field.value);
-//                   // Run my specific process with my_field.value
-//                   my_field.value = '';
-//               }
-//           }
-//       }, false);
-
-// $(document).ready(function() {
-//   $('.submit_on_enter').keyup(function(event) {
-//     // enter has keyCode = 13, change it if you want to use another button
-//     if (event.keyCode == 13) {
-//       openNav(getElementById("searchinput").value);
-//       return false;
-//     }
-//   });
-//
-// });
