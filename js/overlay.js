@@ -22,6 +22,25 @@
         });
   }
 
+  function toggleSymptom(sym){
+    var x = document.getElementById(sym);
+    if (x.style.backgroundColor === "white") {
+      if (sym == "sym1") {
+        x.style.backgroundColor = '#7d1010';
+      }
+      if (sym == "sym2") {
+        x.style.backgroundColor = '#061e8c';
+      }
+      if (sym == "sym3") {
+        x.style.backgroundColor = '#fae528';
+      }
+
+    }
+    else {
+      x.style.backgroundColor = "white";
+    }
+  }
+
   function toggleDay() {
     document.getElementById("day").className = "col-xs-3 time-interval active";
     document.getElementById("week").className = "col-xs-3 time-interval inactive";
@@ -32,8 +51,9 @@
     date.innerHTML="February 20";
     var x = document.getElementById('checkboxes');
     var y = x.getElementsByClassName('hide');
-    while (y.length > 0) {
-      y[0].className = "show";
+    var i;
+    for (i=0; i<3;i++) {
+      y[0].className="show";
     }
   }
 
@@ -47,8 +67,9 @@
     date.innerHTML="February 14 - 20";
     var x = document.getElementById('checkboxes');
     var y = x.getElementsByClassName('show');
-    while (y.length > 0) {
-      y[0].className = "hide";
+    var i;
+    for (i=0; i<3;i++) {
+      y[0].className="hide";
     }
   }
 
@@ -62,8 +83,9 @@
     date.innerHTML="January 24 - February 20";
     var x = document.getElementById('checkboxes');
     var y = x.getElementsByClassName('show');
-    while (y.length > 0) {
-      y[0].className = "hide";
+    var i;
+    for (i=0; i<3;i++) {
+      y[0].className="hide";
     }
   }
 
@@ -77,7 +99,8 @@
     date.innerHTML="February 2016 - 2017";
     var x = document.getElementById('checkboxes');
     var y = x.getElementsByClassName('show');
-    while (y.length > 0) {
-      y[0].className = "hide";
+    var i;
+    for (i=0; i<3;i++) {
+      y[0].className="hide";
     }
   }
