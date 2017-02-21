@@ -19,3 +19,4 @@ $(document).ready(function () {
         // on add, replace list of symptoms with button
     });
 });
+
