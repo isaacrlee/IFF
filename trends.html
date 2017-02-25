@@ -31,7 +31,6 @@
       Trends
     </div>
     <div class="row" id="date">
-      February 16
     </div>
     <div id="checkboxes">
       <div class="row syms">
@@ -44,7 +43,7 @@
             Cough
           </div>
         </div>
-        <div class="show">
+        <!--<div class="show">
           <div class='col-xs-6'>
             <button class='col-xs-4 change-severity toggled'>
             Mild
@@ -59,7 +58,7 @@
           <button class='col-xs-1 delete-button'>
           x
         </button>
-        </div>
+        </div>-->
       </div>
       <div class="row syms">
         <div class='col-xs-1'>
@@ -71,7 +70,7 @@
             Fatigue
           </div>
         </div>
-        <div class="show">
+        <!--<div class="show">
           <div class='col-xs-6'>
             <button class='col-xs-4 change-severity not-toggled'>
             Mild
@@ -86,7 +85,7 @@
           <button class='col-xs-1 delete-button'>
           x
         </button>
-        </div>
+        </div>-->
       </div>
       <div class="row syms">
         <div class='col-xs-1'>
@@ -98,7 +97,7 @@
             Fever
           </div>
         </div>
-        <div class="show">
+        <!--<div class="show">
           <div class='col-xs-6'>
             <button class='col-xs-4 change-severity not-toggled'>
             Mild
@@ -113,7 +112,7 @@
           <button class='col-xs-1 delete-button'>
           x
         </button>
-        </div>
+        </div>-->
       </div>
     </div>
     <div class="row">
@@ -121,16 +120,16 @@
       <div id="container" style="width:100%; height:50em;"></div>
     </div>
     <div class="row time-menu">
-      <button class='col-xs-3 time-interval active' id="day" onclick="toggleDay()">
+      <button class='col-xs-3 time-interval active' id="day">
           Day
         </button>
-      <button class='col-xs-3 time-interval inactive' id="week" onclick="toggleWeek()">
+      <button class='col-xs-3 time-interval inactive' id="week">
           Week
         </button>
-      <button class='col-xs-3 time-interval inactive' id="month" onclick="toggleMonth()">
+      <button class='col-xs-3 time-interval inactive' id="month">
           Month
         </button>
-      <button class='col-xs-3 time-interval inactive' id="year" onclick="toggleYear()">
+      <button class='col-xs-3 time-interval inactive' id="year">
           Year
         </button>
     </div>
@@ -143,72 +142,8 @@
         </button>
     </div>
   </div>
-  <script src="js/overlay.js"></script>
-  <script>
-  var sampleData = {
-    'Congestion': {},
-    'Cough': {},
-    'Fatigue': {},
-    'Fever': {},
-    'Headache': {},
-    'Sore Throat': {}
-  }
-    $(function () {
-      var myChart = Highcharts.chart('container', {
-    title: {
-      text: ''
-    },
-
-    xAxis: [{
-      allowDecimals: false,
-      ceiling: 7,
-      title: {
-            text: 'Day Of Week',
-            style: {
-              fontSize: '5em'
-            }
-        }
-    }],
-
-    yAxis: [{
-      allowDecimals: false,
-      ceiling: 3,
-      title: {
-            text: 'Intensity',
-            style: {
-              fontSize: '5em'
-            }
-        }
-    }],
-
-    legend: {
-        layout: 'vertical',
-        align: 'right',
-        itemStyle: {
-              fontSize: '2em'
-        },
-        verticalAlign: 'middle'
-    },
-
-    plotOptions: {
-        series: {
-            pointStart: 0
-        }
-    },
-
-    series: [{
-        name: 'Cough',
-        data: [1, 0, 1, 0, 2, 3, 3, 3]
-    }, {
-        name: 'Headache',
-        data: [1, 0, 0, 3, 2, 3, 2, 0]
-    }, {
-        name: 'Sore Throat',
-        data: [1, 0, 1, 0, 2, 3, 3, 2]
-    }],
-});
-    });
-  </script>
+  <!--<script src="js/overlay.js"></script>-->
+  <script src="js/trends.js"></script>
 </body>
 
 </html>
