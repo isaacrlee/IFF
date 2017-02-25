@@ -72,11 +72,15 @@ function buildChart() {
         layout: 'vertical',
         align: 'center',
         itemStyle: {
-              fontSize: '2em'
+              fontSize: '3em'
         },
+        itemMarginTop: 20,
+        itemMarginBottom: 20,
+        symbolPadding: 20,
+        symbolWidth: 50,
         verticalAlign: 'top',
         floating: false,
-        x: '-1'
+        x: -302
     },
 
     plotOptions: {
