@@ -134,7 +134,7 @@ input[type="search"] {
   height: 2.5em;
   font-size:3em;
   background-color: #ededed;
-  text-align: center;
+  /*text-align: center;*/
   margin-top: 1em;
   position: absolute;
   left:0;
@@ -144,6 +144,8 @@ input[type="search"] {
 
 .time-interval {
   line-height: 2.3em;
+  margin-left: 1.5em;
+  margin-right: auto;
 }
 
 

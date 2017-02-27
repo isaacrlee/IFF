@@ -3,6 +3,7 @@ $(function () {
   setDate();
   // buildChart();
   // when time is clicked
+  buildChartWeek();
   $('.time-interval').click(function () {
     detectTime($(this));
     if ($(this).html() === 'Week') {
@@ -34,9 +35,39 @@ function setDate() {
   var d = new Date();
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var month = months[d.getMonth()];
+  var year = d.getFullYear();
   var date = d.getDate();
-  $('#date').text(month + ' ' + date);
+  $('#date').text(month + ' ' + date + ', ' + year);
 }
+
+var title = {
+      text: '',
+    };
+
+var colors = ['#7d1010', '#061e8c', '#fae528', '#f7a35c', '#8085e9',
+      '#f15c80', '#e4d354', '#2b908f', '#f45b5b', '#91e8e1'];
+
+var legend = {
+        layout: 'vertical',
+        align: 'center',
+        itemStyle: {
+              fontSize: '3em'
+        },
+        itemMarginTop: 20,
+        itemMarginBottom: 20,
+        symbolPadding: 20,
+        symbolWidth: 50,
+        verticalAlign: 'top',
+        floating: false,
+        x: -302
+    };
+
+var plotOptions = {
+      series: {
+        pointStart: 0,
+        lineWidth: 15,
+      },
+    };
 
 function buildChartWeek() {
   var myChart = Highcharts.chart('container', {
@@ -44,16 +75,9 @@ function buildChartWeek() {
       type: 'area'
     },
 
-    title: {
-      text: ''
-    },
+    title: title,
 
-    legend: {
-      enabled: false
-    },
-
-    colors: ['#7d1010', '#061e8c', '#fae528', '#f7a35c', '#8085e9',
-      '#f15c80', '#e4d354', '#2b908f', '#f45b5b', '#91e8e1'],
+    colors: colors,
 
     xAxis: [{
       allowDecimals: false,
@@ -78,64 +102,21 @@ function buildChartWeek() {
       }
     }],
 
-    legend: {
-        layout: 'vertical',
-        align: 'center',
-        itemStyle: {
-              fontSize: '3em'
-        },
-        itemMarginTop: 20,
-        itemMarginBottom: 20,
-        symbolPadding: 20,
-        symbolWidth: 50,
-        verticalAlign: 'top',
-        floating: false,
-        x: -302
-    },
+    legend: legend,
 
-    plotOptions: {
-      series: {
-        pointStart: 0,
-        lineWidth: 15,
-      },
-    },
+    plotOptions: plotOptions,
 
     series: [{
       name: 'Cough',
-      data: [1, 0, 1, 0, 2, 3, 3]
+      data: [1, 1, 2, 0, 0, 0, 0]
     }, {
       name: 'Headache',
-      data: [1, 0, 0, 3, 2, 3, 2]
+      data: [0, 0, 0, 1, 2, 3, 2]
     }, {
       name: 'Sore Throat',
-      data: [1, 0, 1, 0, 2, 3, 3]
+      data: [3, 2, 0, 0, 0, 0, 0]
     }],
   });
-}
-
-// var data = {
-//   'Cough': [1, 0, 1, 0, 2, 3, 3, 3],
-//   'Headache': [1, 0, 0, 3, 2, 3, 2, 0],
-//   'Sore Throat': [1, 0, 1, 0, 2, 3, 3, 2]
-// }
-
-function toggleSymptom(sym) {
-  var x = document.getElementById(sym);
-  if (x.style.backgroundColor === "white") {
-    if (sym == "sym1") {
-      x.style.backgroundColor = '#7d1010';
-    }
-    if (sym == "sym2") {
-      x.style.backgroundColor = '#061e8c';
-    }
-    if (sym == "sym3") {
-      x.style.backgroundColor = '#fae528';
-    }
-
-  }
-  else {
-    x.style.backgroundColor = "white";
-  }
 }
 
 function buildChartMonth() {
@@ -144,16 +125,9 @@ function buildChartMonth() {
       type: 'area'
     },
 
-    title: {
-      text: '',
-    },
+    title: title,
 
-    legend: {
-      enabled: false
-    },
-
-    colors: ['#7d1010', '#061e8c', '#fae528', '#f7a35c', '#8085e9',
-      '#f15c80', '#e4d354', '#2b908f', '#f45b5b', '#91e8e1'],
+    colors: colors,
 
     xAxis: [{
       allowDecimals: false,
@@ -178,37 +152,19 @@ function buildChartMonth() {
       }
     }],
 
-    legend: {
-        layout: 'vertical',
-        align: 'center',
-        itemStyle: {
-              fontSize: '3em'
-        },
-        itemMarginTop: 20,
-        itemMarginBottom: 20,
-        symbolPadding: 20,
-        symbolWidth: 50,
-        verticalAlign: 'top',
-        floating: false,
-        x: -302
-    },
+    legend: legend,
 
-    plotOptions: {
-      series: {
-        pointStart: 0,
-        lineWidth: 15,
-      },
-    },
+    plotOptions: plotOptions,
 
     series: [{
       name: 'Cough',
-      data: [1, 0, 1, 0, 2, 3, 3]
+      data: [0, 0, 0, 0, 1, 1, 2, 3, 2, 2, 2, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 0, 0, 0, 0]
     }, {
       name: 'Headache',
-      data: [1, 0, 0, 3, 2, 3, 2]
+      data: [0, 0, 0, 1, 2, 3, 2, 2, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 2, 0, 0, 0]
     }, {
       name: 'Sore Throat',
-      data: [1, 0, 1, 0, 2, 3, 3]
+      data: [3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 3, 2, 0, 0, 0, 0]
     }],
   });
 }
@@ -219,16 +175,9 @@ function buildChartYear() {
       type: 'column'
     },
 
-    title: {
-      text: '',
-    },
+    title: title,
 
-    legend: {
-      enabled: false
-    },
-
-    colors: ['#7d1010', '#061e8c', '#fae528', '#f7a35c', '#8085e9',
-      '#f15c80', '#e4d354', '#2b908f', '#f45b5b', '#91e8e1'],
+    colors: colors,
 
     xAxis: [{
       allowDecimals: false,
@@ -252,27 +201,9 @@ function buildChartYear() {
       }
     }],
 
-    legend: {
-        layout: 'vertical',
-        align: 'center',
-        itemStyle: {
-              fontSize: '3em'
-        },
-        itemMarginTop: 20,
-        itemMarginBottom: 20,
-        symbolPadding: 20,
-        symbolWidth: 50,
-        verticalAlign: 'top',
-        floating: false,
-        x: -302
-    },
+    legend: legend,
 
-    plotOptions: {
-      series: {
-        pointStart: 0,
-        lineWidth: 15,
-      },
-    },
+    plotOptions: plotOptions,
 
     series: [{
       name: 'Cough',
@@ -286,6 +217,26 @@ function buildChartYear() {
     }],
   });
 }
+
+// function toggleSymptom(sym) {
+//   var x = document.getElementById(sym);
+//   if (x.style.backgroundColor === "white") {
+//     if (sym == "sym1") {
+//       x.style.backgroundColor = '#7d1010';
+//     }
+//     if (sym == "sym2") {
+//       x.style.backgroundColor = '#061e8c';
+//     }
+//     if (sym == "sym3") {
+//       x.style.backgroundColor = '#fae528';
+//     }
+
+//   }
+//   else {
+//     x.style.backgroundColor = "white";
+//   }
+// }
+
 // function toggleDay() {
 //   document.getElementById("day").className = "col-xs-3 time-interval active";
 //   document.getElementById("week").className = "col-xs-3 time-interval inactive";
