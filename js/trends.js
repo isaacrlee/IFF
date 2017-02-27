@@ -1,10 +1,19 @@
 $(function () {
   // CHART STUFF
   setDate();
-  buildChart();
+  // buildChart();
   // when time is clicked
   $('.time-interval').click(function () {
     detectTime($(this));
+    if ($(this).html() === 'Week') {
+      buildChartWeek();
+    }
+    else if ($(this).html() === 'Month') {
+      buildChartMonth();
+    }
+    else if ($(this).html() === 'Year') {
+      buildChartYear();
+    }
   });
 });
 
@@ -26,10 +35,10 @@ function setDate() {
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var month = months[d.getMonth()];
   var date = d.getDate();
-  $('#date').text(month + ' ' + date); 
+  $('#date').text(month + ' ' + date);
 }
 
-function buildChart() {
+function buildChartWeek() {
   var myChart = Highcharts.chart('container', {
     chart: {
       type: 'area'
@@ -48,7 +57,8 @@ function buildChart() {
 
     xAxis: [{
       allowDecimals: false,
-      ceiling: 7,
+      // ceiling: 7,
+      categories: ['Mon', 'Tue', 'Wed','Thu','Fri','Sat','Sun'],
       title: {
         text: 'Day Of Week',
         style: {
@@ -92,13 +102,13 @@ function buildChart() {
 
     series: [{
       name: 'Cough',
-      data: [1, 0, 1, 0, 2, 3, 3, 3]
+      data: [1, 0, 1, 0, 2, 3, 3]
     }, {
       name: 'Headache',
-      data: [1, 0, 0, 3, 2, 3, 2, 0]
+      data: [1, 0, 0, 3, 2, 3, 2]
     }, {
       name: 'Sore Throat',
-      data: [1, 0, 1, 0, 2, 3, 3, 2]
+      data: [1, 0, 1, 0, 2, 3, 3]
     }],
   });
 }
@@ -128,6 +138,154 @@ function toggleSymptom(sym) {
   }
 }
 
+function buildChartMonth() {
+  var myChart = Highcharts.chart('container', {
+    chart: {
+      type: 'area'
+    },
+
+    title: {
+      text: '',
+    },
+
+    legend: {
+      enabled: false
+    },
+
+    colors: ['#7d1010', '#061e8c', '#fae528', '#f7a35c', '#8085e9',
+      '#f15c80', '#e4d354', '#2b908f', '#f45b5b', '#91e8e1'],
+
+    xAxis: [{
+      allowDecimals: false,
+      min: 1,
+      minRange: 31,
+      title: {
+        text: 'Day Of Month',
+        style: {
+          fontSize: '5em'
+        }
+      }
+    }],
+
+    yAxis: [{
+      allowDecimals: false,
+      ceiling: 3,
+      title: {
+        text: 'Intensity',
+        style: {
+          fontSize: '5em'
+        }
+      }
+    }],
+
+    legend: {
+        layout: 'vertical',
+        align: 'center',
+        itemStyle: {
+              fontSize: '3em'
+        },
+        itemMarginTop: 20,
+        itemMarginBottom: 20,
+        symbolPadding: 20,
+        symbolWidth: 50,
+        verticalAlign: 'top',
+        floating: false,
+        x: -302
+    },
+
+    plotOptions: {
+      series: {
+        pointStart: 0,
+        lineWidth: 15,
+      },
+    },
+
+    series: [{
+      name: 'Cough',
+      data: [1, 0, 1, 0, 2, 3, 3]
+    }, {
+      name: 'Headache',
+      data: [1, 0, 0, 3, 2, 3, 2]
+    }, {
+      name: 'Sore Throat',
+      data: [1, 0, 1, 0, 2, 3, 3]
+    }],
+  });
+}
+
+function buildChartYear() {
+  var myChart = Highcharts.chart('container', {
+    chart: {
+      type: 'column'
+    },
+
+    title: {
+      text: '',
+    },
+
+    legend: {
+      enabled: false
+    },
+
+    colors: ['#7d1010', '#061e8c', '#fae528', '#f7a35c', '#8085e9',
+      '#f15c80', '#e4d354', '#2b908f', '#f45b5b', '#91e8e1'],
+
+    xAxis: [{
+      allowDecimals: false,
+      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      title: {
+        text: 'Month',
+        style: {
+          fontSize: '5em'
+        }
+      }
+    }],
+
+    yAxis: [{
+      allowDecimals: false,
+      max: 31,
+      title: {
+        text: 'Occurrences',
+        style: {
+          fontSize: '5em'
+        }
+      }
+    }],
+
+    legend: {
+        layout: 'vertical',
+        align: 'center',
+        itemStyle: {
+              fontSize: '3em'
+        },
+        itemMarginTop: 20,
+        itemMarginBottom: 20,
+        symbolPadding: 20,
+        symbolWidth: 50,
+        verticalAlign: 'top',
+        floating: false,
+        x: -302
+    },
+
+    plotOptions: {
+      series: {
+        pointStart: 0,
+        lineWidth: 15,
+      },
+    },
+
+    series: [{
+      name: 'Cough',
+      data: [7,14,0,3,2,2,1,10]
+    }, {
+      name: 'Headache',
+      data: [1, 0, 0, 3, 2, 3, 2]
+    }, {
+      name: 'Sore Throat',
+      data: [1, 0, 1, 0, 2, 3, 3]
+    }],
+  });
+}
 // function toggleDay() {
 //   document.getElementById("day").className = "col-xs-3 time-interval active";
 //   document.getElementById("week").className = "col-xs-3 time-interval inactive";
