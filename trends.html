@@ -19,7 +19,7 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
           crossorigin="anonymous"></script>
-
+          <script src="https://code.highcharts.com/highcharts.src.js"></script>
           <link rel="stylesheet" href="css/colors.css">
           <link rel="stylesheet" href="css/overlay.css">
           <link rel="stylesheet" href="css/style.css">
@@ -28,121 +28,114 @@
 <body>
   <div class='container'>
     <div class="row title top-buffer-title">
-       Trends
+      Trends
     </div>
     <div class="row" id="date">
-      February 16
     </div>
-    <div id="checkboxes">
-    <div class="row syms">
-      <div class='col-xs-1'>
-        <div class="box" id="sym1" onclick="toggleSymptom('sym1')">
+    <!--<div id="checkboxes">
+      <div class="row syms">
+        <div class='col-xs-1'>
+          <div class="box" id="sym1" onclick="toggleSymptom('sym1')">
+          </div>
         </div>
-      </div>
-      <div class='col-xs-3'>
-        <div class="symptom-title">
-        Cough
+        <div class='col-xs-3'>
+          <div class="symptom-title">
+            Cough
+          </div>
         </div>
-      </div>
-      <div class="show">
-        <div class='col-xs-6'>
-          <button class='col-xs-4 change-severity toggled'>
+        <div class="show">
+          <div class='col-xs-6'>
+            <button class='col-xs-4 change-severity toggled'>
             Mild
           </button>
-          <button class='col-xs-4 change-severity not-toggled'>
+            <button class='col-xs-4 change-severity not-toggled'>
             Moderate
           </button>
-          <button class='col-xs-4 change-severity not-toggled'>
+            <button class='col-xs-4 change-severity not-toggled'>
             Severe
           </button>
-        </div>
-        <button class='col-xs-1 delete-button'>
+          </div>
+          <button class='col-xs-1 delete-button'>
           x
         </button>
-      </div>
-    </div>
-    <div class="row syms">
-      <div class='col-xs-1'>
-        <button class="box" id="sym2" onclick="toggleSymptom('sym2')">
-        </button>
-      </div>
-      <div class='col-xs-3'>
-        <div class="symptom-title">
-        Fatigue
         </div>
       </div>
-      <div class="show">
-        <div class='col-xs-6'>
-          <button class='col-xs-4 change-severity not-toggled'>
+      <div class="row syms">
+        <div class='col-xs-1'>
+          <button class="box" id="sym2" onclick="toggleSymptom('sym2')">
+        </button>
+        </div>
+        <div class='col-xs-3'>
+          <div class="symptom-title">
+            Fatigue
+          </div>
+        </div>
+        <div class="show">
+          <div class='col-xs-6'>
+            <button class='col-xs-4 change-severity not-toggled'>
             Mild
           </button>
-          <button class='col-xs-4 change-severity not-toggled'>
+            <button class='col-xs-4 change-severity not-toggled'>
             Moderate
           </button>
-          <button class='col-xs-4 change-severity toggled'>
+            <button class='col-xs-4 change-severity toggled'>
             Severe
           </button>
-        </div>
-        <button class='col-xs-1 delete-button'>
+          </div>
+          <button class='col-xs-1 delete-button'>
           x
         </button>
-      </div>
-    </div>
-    <div class="row syms">
-      <div class='col-xs-1'>
-        <div class="box" id="sym3" onclick="toggleSymptom('sym3')">
         </div>
       </div>
-      <div class='col-xs-3'>
-        <div class="symptom-title">
-        Fever
+      <div class="row syms">
+        <div class='col-xs-1'>
+          <div class="box" id="sym3" onclick="toggleSymptom('sym3')">
+          </div>
         </div>
-      </div>
-      <div class="show">
-        <div class='col-xs-6'>
-          <button class='col-xs-4 change-severity not-toggled'>
+        <div class='col-xs-3'>
+          <div class="symptom-title">
+            Fever
+          </div>
+        </div>
+        <div class="show">
+          <div class='col-xs-6'>
+            <button class='col-xs-4 change-severity not-toggled'>
             Mild
           </button>
-          <button class='col-xs-4 change-severity toggled'>
+            <button class='col-xs-4 change-severity toggled'>
             Moderate
           </button>
-          <button class='col-xs-4 change-severity not-toggled'>
+            <button class='col-xs-4 change-severity not-toggled'>
             Severe
           </button>
-        </div>
-        <button class='col-xs-1 delete-button'>
+          </div>
+          <button class='col-xs-1 delete-button'>
           x
         </button>
+        </div>
       </div>
-    </div>
-  </div>
+    </div>-->
     <div class="row">
-      <img src="graph1.png" id="graph">
+      <!--<img src="graph1.png" id="graph">-->
+      <div id="container" style="width:100%; height:82em;"></div>
     </div>
-      <div class="row time-menu">
-        <button class='col-xs-3 time-interval active' id="day" onclick="toggleDay()">
-          Day
-        </button>
-        <button class='col-xs-3 time-interval inactive' id="week" onclick="toggleWeek()">
-          Week
-        </button>
-        <button class='col-xs-3 time-interval inactive' id="month" onclick="toggleMonth()">
-          Month
-        </button>
-        <button class='col-xs-3 time-interval inactive' id="year" onclick="toggleYear()">
-          Year
-        </button>
-      </div>
-      <div class='row menu'>
-        <button class='col-xs-6 tabs' onclick='window.location.href="index.html"'>
+    <div class="row time-menu">
+      <!--<button class='col-xs-3 time-interval active' id="day">Day</button>-->
+      <button class='col-xs-3 time-interval active' id="week">Week</button>
+      <button class='col-xs-3 time-interval inactive' id="month">Month</button>
+      <button class='col-xs-3 time-interval inactive' id="year">Year</button>
+    </div>
+    <div class='row menu'>
+      <button class='col-xs-6 tabs' onclick='window.location.href="index.html"'>
           Input Symptoms
         </button>
-        <button class='col-xs-6 tabs'>
+      <button class='col-xs-6 tabs'>
           Trends
         </button>
-      </div>
     </div>
-  <script src="js/overlay.js"></script>
+  </div>
+  <!--<script src="js/overlay.js"></script>-->
+  <script src="js/trends.js"></script>
 </body>
 
 </html>
