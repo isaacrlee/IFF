@@ -1,19 +1,21 @@
 $(function () {
   // CHART STUFF
-  setDate();
-  // buildChart();
   // when time is clicked
   buildChartWeek();
+  setDate('Week');
   $('.time-interval').click(function () {
     detectTime($(this));
     if ($(this).html() === 'Week') {
       buildChartWeek();
+      setDate('Week');
     }
     else if ($(this).html() === 'Month') {
       buildChartMonth();
+      setDate('Month');
     }
     else if ($(this).html() === 'Year') {
       buildChartYear();
+      setDate('Year');
     }
   });
 });
@@ -31,43 +33,80 @@ function detectTime(clicked) {
   });
 }
 // sets data at top of page
-function setDate() {
+function setDate(section) {
   var d = new Date();
   var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  var month = months[d.getMonth()];
   var year = d.getFullYear();
   var date = d.getDate();
-  $('#date').text(month + ' ' + date + ', ' + year);
+  var day = d.getDay();
+  if (section === "Week") {
+    var first = date - day;
+    var last = first + 6;
+    var lastDay = new Date(d.setDate(last));
+    var firstDay = new Date(d.setDate(first));
+    var lastMonth = lastDay.getUTCMonth();
+    var firstMonth = firstDay.getUTCMonth();
+    $('#date').text(months[firstMonth] + ' ' + firstDay.getUTCDate() + ' - ' + months[lastMonth] + ' ' + lastDay.getUTCDate());
+  }
+  else if (section === "Month") {
+    var firstDay = new Date(d.getFullYear(), d.getMonth(), 1);
+    var lastDay = new Date(d.getFullYear(), d.getMonth() + 1, 0);
+    var lastMonth = lastDay.getUTCMonth();
+    var firstMonth = firstDay.getUTCMonth();
+    $('#date').text(months[firstMonth] + ' ' + firstDay.getUTCDate() + ' - ' + months[lastMonth] + ' ' + lastDay.getUTCDate());
+  }
+  else if (section === "Year") {
+    $('#date').text(year);
+  }
 }
 
 var title = {
-      text: '',
-    };
+  text: '',
+};
 
 var colors = ['#7d1010', '#061e8c', '#fae528', '#f7a35c', '#8085e9',
-      '#f15c80', '#e4d354', '#2b908f', '#f45b5b', '#91e8e1'];
+  '#f15c80', '#e4d354', '#2b908f', '#f45b5b', '#91e8e1'];
 
 var legend = {
-        layout: 'vertical',
-        align: 'center',
-        itemStyle: {
-              fontSize: '3em'
-        },
-        itemMarginTop: 20,
-        itemMarginBottom: 20,
-        symbolPadding: 20,
-        symbolWidth: 50,
-        verticalAlign: 'top',
-        floating: false,
-        x: -302
-    };
+  layout: 'vertical',
+  align: 'center',
+  itemStyle: {
+    fontSize: '3em'
+  },
+  itemMarginTop: 20,
+  itemMarginBottom: 20,
+  symbolPadding: 20,
+  symbolWidth: 50,
+  verticalAlign: 'top',
+  floating: false,
+  x: -302
+};
 
 var plotOptions = {
-      series: {
-        pointStart: 0,
-        lineWidth: 15,
-      },
-    };
+  series: {
+    pointStart: 0,
+    lineWidth: 15,
+  },
+};
+var yAxisWM = [{
+  allowDecimals: false,
+  ceiling: 3,
+  title: {
+    text: 'Severity',
+    style: {
+      fontSize: '5em'
+    }
+  },
+  labels: {
+    formatter: function () {
+      var severities = ['','Mild','Moderate','Severe'];
+      return severities[this.value];
+    },
+    style: {
+      "fontSize": "2em"
+    }
+  }
+}];
 
 function buildChartWeek() {
   var myChart = Highcharts.chart('container', {
@@ -81,26 +120,21 @@ function buildChartWeek() {
 
     xAxis: [{
       allowDecimals: false,
-      // ceiling: 7,
-      categories: ['Mon', 'Tue', 'Wed','Thu','Fri','Sat','Sun'],
+      categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
       title: {
         text: 'Day Of Week',
         style: {
           fontSize: '5em'
         }
-      }
-    }],
-
-    yAxis: [{
-      allowDecimals: false,
-      ceiling: 3,
-      title: {
-        text: 'Intensity',
+      },
+      labels: {
         style: {
-          fontSize: '5em'
+          "fontSize": "2em"
         }
       }
     }],
+
+    yAxis: yAxisWM,
 
     legend: legend,
 
@@ -138,19 +172,15 @@ function buildChartMonth() {
         style: {
           fontSize: '5em'
         }
-      }
-    }],
-
-    yAxis: [{
-      allowDecimals: false,
-      ceiling: 3,
-      title: {
-        text: 'Intensity',
+      },
+      labels: {
         style: {
-          fontSize: '5em'
+          "fontSize": "2em"
         }
       }
     }],
+
+    yAxis: yAxisWM,
 
     legend: legend,
 
@@ -187,6 +217,11 @@ function buildChartYear() {
         style: {
           fontSize: '5em'
         }
+      },
+      labels: {
+        style: {
+          "fontSize": "2em"
+        }
       }
     }],
 
@@ -198,6 +233,11 @@ function buildChartYear() {
         style: {
           fontSize: '5em'
         }
+      },
+      labels: {
+        style: {
+          "fontSize": "2em"
+        }
       }
     }],
 
@@ -207,7 +247,7 @@ function buildChartYear() {
 
     series: [{
       name: 'Cough',
-      data: [7,14,0,3,2,2,1,10]
+      data: [7, 14, 0, 3, 2, 2, 1, 10]
     }, {
       name: 'Headache',
       data: [1, 0, 0, 3, 2, 3, 2]
@@ -217,86 +257,3 @@ function buildChartYear() {
     }],
   });
 }
-
-// function toggleSymptom(sym) {
-//   var x = document.getElementById(sym);
-//   if (x.style.backgroundColor === "white") {
-//     if (sym == "sym1") {
-//       x.style.backgroundColor = '#7d1010';
-//     }
-//     if (sym == "sym2") {
-//       x.style.backgroundColor = '#061e8c';
-//     }
-//     if (sym == "sym3") {
-//       x.style.backgroundColor = '#fae528';
-//     }
-
-//   }
-//   else {
-//     x.style.backgroundColor = "white";
-//   }
-// }
-
-// function toggleDay() {
-//   document.getElementById("day").className = "col-xs-3 time-interval active";
-//   document.getElementById("week").className = "col-xs-3 time-interval inactive";
-//   document.getElementById("month").className = "col-xs-3 time-interval inactive";
-//   document.getElementById("year").className = "col-xs-3 time-interval inactive";
-//   document.getElementById('graph').src = "graph1.png";
-//   var date = document.getElementById("date");
-//   date.innerHTML = "February 20";
-//   var x = document.getElementById('checkboxes');
-//   var y = x.getElementsByClassName('hide');
-//   var i;
-//   for (i = 0; i < 3; i++) {
-//     y[0].className = "show";
-//   }
-// }
-
-// function toggleWeek() {
-//   document.getElementById("week").className = "col-xs-3 time-interval active";
-//   document.getElementById("day").className = "col-xs-3 time-interval inactive";
-//   document.getElementById("month").className = "col-xs-3 time-interval inactive";
-//   document.getElementById("year").className = "col-xs-3 time-interval inactive";
-//   document.getElementById('graph').src = "graph2.png";
-//   var date = document.getElementById("date");
-//   date.innerHTML = "February 14 - 20";
-//   var x = document.getElementById('checkboxes');
-//   var y = x.getElementsByClassName('show');
-//   var i;
-//   for (i = 0; i < 3; i++) {
-//     y[0].className = "hide";
-//   }
-// }
-
-// function toggleMonth() {
-//   document.getElementById("month").className = "col-xs-3 time-interval active";
-//   document.getElementById("day").className = "col-xs-3 time-interval inactive";
-//   document.getElementById("week").className = "col-xs-3 time-interval inactive";
-//   document.getElementById("year").className = "col-xs-3 time-interval inactive";
-//   document.getElementById('graph').src = "graph3.png";
-//   var date = document.getElementById("date");
-//   date.innerHTML = "January 24 - February 20";
-//   var x = document.getElementById('checkboxes');
-//   var y = x.getElementsByClassName('show');
-//   var i;
-//   for (i = 0; i < 3; i++) {
-//     y[0].className = "hide";
-//   }
-// }
-
-// function toggleYear() {
-//   document.getElementById("year").className = "col-xs-3 time-interval active";
-//   document.getElementById("day").className = "col-xs-3 time-interval inactive";
-//   document.getElementById("week").className = "col-xs-3 time-interval inactive";
-//   document.getElementById("month").className = "col-xs-3 time-interval inactive";
-//   document.getElementById('graph').src = "graph4.png";
-//   var date = document.getElementById("date");
-//   date.innerHTML = "February 2016 - 2017";
-//   var x = document.getElementById('checkboxes');
-//   var y = x.getElementsByClassName('show');
-//   var i;
-//   for (i = 0; i < 3; i++) {
-//     y[0].className = "hide";
-//   }
-// }
