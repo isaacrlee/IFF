@@ -10,4 +10,4 @@
 * Isaac Lee ([@isaacrlee] (https://github.com/isaacrlee))
 
 ## What is IFF? 
-IFF is a mobile-first web app enable users to easily track symptoms over prolonged periods of time and observe trends in data to monitor their health.
+IFF is a mobile-first web app that enables users to easily track symptoms over prolonged periods of time and observe trends in data to monitor their health.
